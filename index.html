@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Local Library</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Available Books</h1>
+        <button class="add-button">
+            <i class="material-icons">add_box</i>
+        </button>
+    </header>
+    <main>
+        <dialog>
+            <button aria-label="close" id="close-button">
+                <i class="material-icons">cancel</i>
+            </button>
+            <form>
+                <p class="heading">Enter Book Details</p>
+                <p>
+                    <label for="new-title">
+                        Title: 
+                    </label>
+                    <input type="text" id="new-title" class="new-title" name="new-title" required>
+                </p>
+
+                <p>
+                    <label for="new-author">
+                        Author: 
+                    </label>
+                    <input type="text" id="new-author" class="new-author" name="new-author" required>
+                </p>
+
+                <p>
+                    <label for="new-pages">
+                        Pages: 
+                    </label>
+                    <input type="number" min=1 class="new-pages" id="new-pages" name="new-pages" required>
+                </p>
+
+                <p>
+                    <label for="new-read">
+                        Read:
+                    </label>
+                    <span class="input-wrapper"><input type="checkbox" class="new-read" id="new-read" name="new-read"></span>
+                </p>
+
+                <p><button type="submit" formmethod="dialog">Add</button></p>
+            </form>
+        </dialog>
+
+
+        <div class="books-list">
+            <div class="so-empty">Looks Like We Got Nothing Yet...</div>
+            <template class="card-template">
+                <div class="card">
+                    <div class="title"></div>
+                    <div class="author"></div>
+                    <div class="pages"></div>
+                    <div class="interactables">
+                        <label for="read-toggle">
+                            <input type="checkbox" id="read-toggle" class="read-toggle">
+                            Read
+                        </label>
+                        <button class="remove-button">
+                            <i class="material-icons">delete</i>
+                        </button>
+                    </div>
+                </div>
+            </template> 
+        </div>
+    </main>
+    <footer></footer>
+</body>
+</html>
